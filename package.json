@@ -1,6 +1,6 @@
 {
   "name": "revertable-globals",
-  "private": true,
+  "version": "1.0.0",
   "description": "Sets globals that can be easily reverted to restore the original environment; useful for testing code that relies on the presence of certain globals.",
   "license": "MIT",
   "author": {

@@ -1,5 +1,5 @@
 # revertable-globals changelog
 
-## Next
+## 1.0.0
 
 Initial release.
