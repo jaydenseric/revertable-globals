@@ -27,6 +27,7 @@
     "node": "^10.17.0 || ^12.0.0 || >= 13.7.0"
   },
   "devDependencies": {
+    "coverage-node": "^3.0.0",
     "eslint": "^7.5.0",
     "eslint-config-env": "^15.0.1",
     "eslint-config-prettier": "^6.11.0",
@@ -46,7 +47,7 @@
     "test": "npm run test:eslint && npm run test:prettier && npm run test:api",
     "test:eslint": "eslint .",
     "test:prettier": "prettier -c .",
-    "test:api": "node -r hard-rejection/register test",
+    "test:api": "coverage-node -r hard-rejection/register test",
     "prepublishOnly": "npm test"
   }
 }
