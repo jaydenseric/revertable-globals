@@ -2,6 +2,10 @@
 
 ## Next
 
+### Minor
+
+- Allow the global namespace to be specified and add an example for how to set and revert an environment variable at runtime.
+
 ### Patch
 
 - Updated dependencies.

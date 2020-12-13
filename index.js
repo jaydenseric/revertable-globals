@@ -7,6 +7,7 @@ const ABSENT = Symbol();
  * @kind function
  * @name revertableGlobals
  * @param {object} globals Map of globals to set.
+ * @param {object} [namespace] Namespace for the globals, defaulting to the Node.js [`global`](https://nodejs.org/api/globals.html#globals_global).
  * @returns {Function} Reverts the globals.
  * @example <caption>How to `import`.</caption>
  * ```js
@@ -33,18 +34,30 @@ const ABSENT = Symbol();
  *   revertGlobals();
  * }
  * ```
+ * @example <caption>How to set and revert an environment variable at runtime for a test.</caption>
+ * ```js
+ * import revertableGlobals from 'revertable-globals';
+ *
+ * const revertEnv = revertableGlobals({ FORCE_COLOR: '1' }, process.env);
+ *
+ * try {
+ *   // Test assertions here…
+ * } finally {
+ *   revertEnv();
+ * }
+ * ```
  */
-module.exports = function revertableGlobals(globals) {
+module.exports = function revertableGlobals(globals, namespace = global) {
   const originalGlobals = {};
 
   for (const [key, value] of Object.entries(globals)) {
-    originalGlobals[key] = key in global ? global[key] : ABSENT;
-    global[key] = value;
+    originalGlobals[key] = key in namespace ? namespace[key] : ABSENT;
+    namespace[key] = value;
   }
 
   return () => {
     for (const [key, value] of Object.entries(originalGlobals))
-      if (value === ABSENT) delete global[key];
-      else global[key] = value;
+      if (value === ABSENT) delete namespace[key];
+      else namespace[key] = value;
   };
 };

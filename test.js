@@ -7,6 +7,29 @@ const revertableGlobals = require('./index');
 const tests = new TestDirector();
 
 tests.add(
+  '`revertableGlobals` with a namespace, a present global, value not undefined.',
+  () => {
+    const globalName = 'revertableGlobalsTestA';
+    const originalValue = false;
+    const newValue = true;
+    const namespace = {};
+
+    namespace[globalName] = originalValue;
+
+    const revertGlobals = revertableGlobals(
+      { [globalName]: newValue },
+      namespace
+    );
+
+    strictEqual(namespace[globalName], newValue);
+
+    revertGlobals();
+
+    strictEqual(namespace[globalName], originalValue);
+  }
+);
+
+tests.add(
   '`revertableGlobals` with a present global, value not undefined.',
   () => {
     const globalName = 'revertableGlobalsTestA';

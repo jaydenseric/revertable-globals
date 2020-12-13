@@ -22,9 +22,10 @@ npm install revertable-globals
 
 Sets globals that can be easily reverted to restore the original environment.
 
-| Parameter | Type   | Description            |
-| :-------- | :----- | :--------------------- |
+| Parameter | Type | Description |
+| :-- | :-- | :-- |
 | `globals` | object | Map of globals to set. |
+| `namespace` | object? | Namespace for the globals, defaulting to the Node.js [`global`](https://nodejs.org/api/globals.html#globals_global). |
 
 **Returns:** Function — Reverts the globals.
 
@@ -58,5 +59,19 @@ _How to set and revert `fetch` related globals for a test._
 >   // Test assertions here…
 > } finally {
 >   revertGlobals();
+> }
+> ```
+
+_How to set and revert an environment variable at runtime for a test._
+
+> ```js
+> import revertableGlobals from 'revertable-globals';
+>
+> const revertEnv = revertableGlobals({ FORCE_COLOR: '1' }, process.env);
+>
+> try {
+>   // Test assertions here…
+> } finally {
+>   revertEnv();
 > }
 > ```
