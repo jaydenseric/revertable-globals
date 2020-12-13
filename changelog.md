@@ -1,5 +1,11 @@
 # revertable-globals changelog
 
+## Next
+
+### Patch
+
+- Updated dependencies.
+
 ## 1.0.1
 
 ### Patch
