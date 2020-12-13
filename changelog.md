@@ -9,6 +9,7 @@
 ### Patch
 
 - Updated dependencies.
+- Also test Node.js v15 in GitHub Actions CI.
 
 ## 1.0.1
 
