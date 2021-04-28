@@ -8,6 +8,7 @@
 - Updated dev dependencies, some of which require newer Node.js versions than were previously supported.
 - Added a package `exports` field.
 - The API is now ESM in `.mjs` files instead of CJS in `.js` files, [accessible via `import` but not `require`](https://nodejs.org/dist/latest/docs/api/esm.html#esm_require).
+- Default the function `revertableGlobals` argument 2 `namespace` to the universal [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis) instead of the Node.js [`global`](https://nodejs.org/api/globals.html#globals_global).
 
 ### Patch
 

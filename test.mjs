@@ -34,15 +34,15 @@ tests.add(
     const originalValue = false;
     const newValue = true;
 
-    global[globalName] = originalValue;
+    globalThis[globalName] = originalValue;
 
     const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-    strictEqual(global[globalName], newValue);
+    strictEqual(globalThis[globalName], newValue);
 
     revertGlobals();
 
-    strictEqual(global[globalName], originalValue);
+    strictEqual(globalThis[globalName], originalValue);
   }
 );
 
@@ -53,16 +53,16 @@ tests.add(
     const originalValue = undefined;
     const newValue = true;
 
-    global[globalName] = originalValue;
+    globalThis[globalName] = originalValue;
 
     const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-    strictEqual(global[globalName], newValue);
+    strictEqual(globalThis[globalName], newValue);
 
     revertGlobals();
 
-    strictEqual(globalName in global, true);
-    strictEqual(global[globalName], originalValue);
+    strictEqual(globalName in globalThis, true);
+    strictEqual(globalThis[globalName], originalValue);
   }
 );
 
@@ -71,11 +71,11 @@ tests.add('`revertableGlobals` with an absent global.', () => {
   const newValue = true;
   const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-  strictEqual(global[globalName], newValue);
+  strictEqual(globalThis[globalName], newValue);
 
   revertGlobals();
 
-  strictEqual(globalName in global, false);
+  strictEqual(globalName in globalThis, false);
 });
 
 tests.add('`revertableGlobals` with various globals.', () => {
@@ -88,8 +88,8 @@ tests.add('`revertableGlobals` with various globals.', () => {
   const globalName3 = 'revertableGlobalsTestD3';
   const newValue3 = 2;
 
-  global[globalName1] = originalValue1;
-  global[globalName2] = originalValue2;
+  globalThis[globalName1] = originalValue1;
+  globalThis[globalName2] = originalValue2;
 
   const revertGlobals = revertableGlobals({
     [globalName1]: newValue1,
@@ -97,15 +97,15 @@ tests.add('`revertableGlobals` with various globals.', () => {
     [globalName3]: newValue3,
   });
 
-  strictEqual(global[globalName1], newValue1);
-  strictEqual(global[globalName2], newValue2);
-  strictEqual(global[globalName3], newValue3);
+  strictEqual(globalThis[globalName1], newValue1);
+  strictEqual(globalThis[globalName2], newValue2);
+  strictEqual(globalThis[globalName3], newValue3);
 
   revertGlobals();
 
-  strictEqual(global[globalName1], originalValue1);
-  strictEqual(global[globalName2], originalValue2);
-  strictEqual(globalName3 in global, false);
+  strictEqual(globalThis[globalName1], originalValue1);
+  strictEqual(globalThis[globalName2], originalValue2);
+  strictEqual(globalName3 in globalThis, false);
 });
 
 tests.run();

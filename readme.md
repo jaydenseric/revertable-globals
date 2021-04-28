@@ -2,7 +2,7 @@
 
 [![npm version](https://badgen.net/npm/v/revertable-globals)](https://npm.im/revertable-globals) [![CI status](https://github.com/jaydenseric/revertable-globals/workflows/CI/badge.svg)](https://github.com/jaydenseric/revertable-globals/actions)
 
-Sets globals in a [Node.js](https://nodejs.org) environment that can be easily reverted to restore the original environment; useful for testing code that relies on the presence of certain globals.
+Sets globals in a JavaScript environment that can be easily reverted to restore the original environment; useful for testing code that relies on the presence of certain globals.
 
 ## Setup
 
@@ -25,7 +25,7 @@ Sets globals that can be easily reverted to restore the original environment.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | `globals` | object | Map of globals to set. |
-| `namespace` | object? | Namespace for the globals, defaulting to the Node.js [`global`](https://nodejs.org/api/globals.html#globals_global). |
+| `namespace` | object? = globalThis | Namespace for the globals, defaulting to [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis). |
 
 **Returns:** Function — Reverts the globals.
 

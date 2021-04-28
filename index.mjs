@@ -5,7 +5,7 @@ const ABSENT = Symbol();
  * @kind function
  * @name revertableGlobals
  * @param {object} globals Map of globals to set.
- * @param {object} [namespace] Namespace for the globals, defaulting to the Node.js [`global`](https://nodejs.org/api/globals.html#globals_global).
+ * @param {object} [namespace=globalThis] Namespace for the globals, defaulting to [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
  * @returns {Function} Reverts the globals.
  * @example <caption>How to `import`.</caption>
  * ```js
@@ -41,7 +41,7 @@ const ABSENT = Symbol();
  * }
  * ```
  */
-export default function revertableGlobals(globals, namespace = global) {
+export default function revertableGlobals(globals, namespace = globalThis) {
   const originalGlobals = {};
 
   for (const [key, value] of Object.entries(globals)) {
