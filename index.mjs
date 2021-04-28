@@ -1,5 +1,3 @@
-'use strict';
-
 const ABSENT = Symbol();
 
 /**
@@ -12,10 +10,6 @@ const ABSENT = Symbol();
  * @example <caption>How to `import`.</caption>
  * ```js
  * import revertableGlobals from 'revertable-globals';
- * ```
- * @example <caption>How to `require`.</caption>
- * ```js
- * const revertableGlobals = require('revertable-globals');
  * ```
  * @example <caption>How to set and revert `fetch` related globals for a test.</caption>
  * ```js
@@ -47,7 +41,7 @@ const ABSENT = Symbol();
  * }
  * ```
  */
-module.exports = function revertableGlobals(globals, namespace = global) {
+export default function revertableGlobals(globals, namespace = global) {
   const originalGlobals = {};
 
   for (const [key, value] of Object.entries(globals)) {
@@ -60,4 +54,4 @@ module.exports = function revertableGlobals(globals, namespace = global) {
       if (value === ABSENT) delete namespace[key];
       else namespace[key] = value;
   };
-};
+}

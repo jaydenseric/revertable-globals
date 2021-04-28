@@ -1,8 +1,6 @@
-'use strict';
-
-const { strictEqual } = require('assert');
-const { TestDirector } = require('test-director');
-const revertableGlobals = require('./index');
+import { strictEqual } from 'assert';
+import TestDirector from 'test-director';
+import revertableGlobals from './index.mjs';
 
 const tests = new TestDirector();
 

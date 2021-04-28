@@ -37,12 +37,6 @@ _How to `import`._
 > import revertableGlobals from 'revertable-globals';
 > ```
 
-_How to `require`._
-
-> ```js
-> const revertableGlobals = require('revertable-globals');
-> ```
-
 _How to set and revert `fetch` related globals for a test._
 
 > ```js
