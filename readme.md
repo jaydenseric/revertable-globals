@@ -6,10 +6,10 @@ Sets globals in a [Node.js](https://nodejs.org) environment that can be easily r
 
 ## Setup
 
-Install with [npm](https://npmjs.com/get-npm):
+To install with [npm](https://npmjs.com/get-npm), run:
 
-```shell
-npm install revertable-globals
+```sh
+npm install revertable-globals --save-dev
 ```
 
 ## API
