@@ -1,3 +1,5 @@
+// @ts-check
+
 import { strictEqual } from "assert";
 import TestDirector from "test-director";
 import revertableGlobals from "./revertableGlobals.mjs";
@@ -10,6 +12,8 @@ tests.add(
     const globalName = "revertableGlobalsTestA";
     const originalValue = false;
     const newValue = true;
+
+    /** @type {Record<string, unknown>} */
     const namespace = {};
 
     namespace[globalName] = originalValue;
@@ -34,15 +38,24 @@ tests.add(
     const originalValue = false;
     const newValue = true;
 
+    // @ts-ignore
     globalThis[globalName] = originalValue;
 
     const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-    strictEqual(globalThis[globalName], newValue);
+    strictEqual(
+      // @ts-ignore
+      globalThis[globalName],
+      newValue
+    );
 
     revertGlobals();
 
-    strictEqual(globalThis[globalName], originalValue);
+    strictEqual(
+      // @ts-ignore
+      globalThis[globalName],
+      originalValue
+    );
   }
 );
 
@@ -53,16 +66,25 @@ tests.add(
     const originalValue = undefined;
     const newValue = true;
 
+    // @ts-ignore
     globalThis[globalName] = originalValue;
 
     const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-    strictEqual(globalThis[globalName], newValue);
+    strictEqual(
+      // @ts-ignore
+      globalThis[globalName],
+      newValue
+    );
 
     revertGlobals();
 
     strictEqual(globalName in globalThis, true);
-    strictEqual(globalThis[globalName], originalValue);
+    strictEqual(
+      // @ts-ignore
+      globalThis[globalName],
+      originalValue
+    );
   }
 );
 
@@ -71,7 +93,11 @@ tests.add("`revertableGlobals` with an absent global.", () => {
   const newValue = true;
   const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
-  strictEqual(globalThis[globalName], newValue);
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName],
+    newValue
+  );
 
   revertGlobals();
 
@@ -88,7 +114,9 @@ tests.add("`revertableGlobals` with various globals.", () => {
   const globalName3 = "revertableGlobalsTestD3";
   const newValue3 = 2;
 
+  // @ts-ignore
   globalThis[globalName1] = originalValue1;
+  // @ts-ignore
   globalThis[globalName2] = originalValue2;
 
   const revertGlobals = revertableGlobals({
@@ -97,14 +125,34 @@ tests.add("`revertableGlobals` with various globals.", () => {
     [globalName3]: newValue3,
   });
 
-  strictEqual(globalThis[globalName1], newValue1);
-  strictEqual(globalThis[globalName2], newValue2);
-  strictEqual(globalThis[globalName3], newValue3);
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName1],
+    newValue1
+  );
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName2],
+    newValue2
+  );
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName3],
+    newValue3
+  );
 
   revertGlobals();
 
-  strictEqual(globalThis[globalName1], originalValue1);
-  strictEqual(globalThis[globalName2], originalValue2);
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName1],
+    originalValue1
+  );
+  strictEqual(
+    // @ts-ignore
+    globalThis[globalName2],
+    originalValue2
+  );
   strictEqual(globalName3 in globalThis, false);
 });
 

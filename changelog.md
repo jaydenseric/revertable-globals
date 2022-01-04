@@ -8,12 +8,14 @@
 - Updated dev dependencies, some of which require newer Node.js versions than previously supported.
 - Removed `./package` from the package `exports` field; the full `package.json` filename must be used in a `require` path.
 - Renamed `index.mjs` to `revertableGlobals.mjs` and added it to the package `exports` field.
+- Implemented TypeScript types via JSDoc comments.
 
 ### Patch
 
 - Also run GitHub Actions CI with Node.js v17.
 - Simplified package scripts.
-- Added a package `docs-check` script that checks the readme API docs are up to date with the source JSDoc.
+- Check TypeScript types via a new package `types` script.
+- Removed the [`jsdoc-md`](https://npm.im/jsdoc-md) dev dependency and the related package scripts, replacing the readme “API” section with a manually written “Exports” section.
 - Configured Prettier option `singleQuote` to the default, `false`.
 - Documentation tweaks.
 
