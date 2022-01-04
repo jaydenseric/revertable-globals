@@ -9,12 +9,12 @@ const ABSENT = Symbol();
  * @returns {Function} Reverts the globals.
  * @example <caption>How to `import`.</caption>
  * ```js
- * import revertableGlobals from 'revertable-globals';
+ * import revertableGlobals from "revertable-globals";
  * ```
  * @example <caption>How to set and revert `fetch` related globals for a test.</caption>
  * ```js
- * import fetch, { Request, Response } from 'node-fetch';
- * import revertableGlobals from 'revertable-globals';
+ * import fetch, { Request, Response } from "node-fetch";
+ * import revertableGlobals from "revertable-globals";
  *
  * const revertGlobals = revertableGlobals({
  *   fetch,
@@ -30,9 +30,9 @@ const ABSENT = Symbol();
  * ```
  * @example <caption>How to set and revert an environment variable at runtime for a test.</caption>
  * ```js
- * import revertableGlobals from 'revertable-globals';
+ * import revertableGlobals from "revertable-globals";
  *
- * const revertEnv = revertableGlobals({ FORCE_COLOR: '1' }, process.env);
+ * const revertEnv = revertableGlobals({ FORCE_COLOR: "1" }, process.env);
  *
  * try {
  *   // Test assertions here…

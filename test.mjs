@@ -1,13 +1,13 @@
-import { strictEqual } from 'assert';
-import TestDirector from 'test-director';
-import revertableGlobals from './index.mjs';
+import { strictEqual } from "assert";
+import TestDirector from "test-director";
+import revertableGlobals from "./index.mjs";
 
 const tests = new TestDirector();
 
 tests.add(
-  '`revertableGlobals` with a namespace, a present global, value not undefined.',
+  "`revertableGlobals` with a namespace, a present global, value not undefined.",
   () => {
-    const globalName = 'revertableGlobalsTestA';
+    const globalName = "revertableGlobalsTestA";
     const originalValue = false;
     const newValue = true;
     const namespace = {};
@@ -28,9 +28,9 @@ tests.add(
 );
 
 tests.add(
-  '`revertableGlobals` with a present global, value not undefined.',
+  "`revertableGlobals` with a present global, value not undefined.",
   () => {
-    const globalName = 'revertableGlobalsTestA';
+    const globalName = "revertableGlobalsTestA";
     const originalValue = false;
     const newValue = true;
 
@@ -47,9 +47,9 @@ tests.add(
 );
 
 tests.add(
-  '`revertableGlobals` with an present global, value undefined.',
+  "`revertableGlobals` with an present global, value undefined.",
   () => {
-    const globalName = 'revertableGlobalsTestB';
+    const globalName = "revertableGlobalsTestB";
     const originalValue = undefined;
     const newValue = true;
 
@@ -66,8 +66,8 @@ tests.add(
   }
 );
 
-tests.add('`revertableGlobals` with an absent global.', () => {
-  const globalName = 'revertableGlobalsTestC';
+tests.add("`revertableGlobals` with an absent global.", () => {
+  const globalName = "revertableGlobalsTestC";
   const newValue = true;
   const revertGlobals = revertableGlobals({ [globalName]: newValue });
 
@@ -78,14 +78,14 @@ tests.add('`revertableGlobals` with an absent global.', () => {
   strictEqual(globalName in globalThis, false);
 });
 
-tests.add('`revertableGlobals` with various globals.', () => {
-  const globalName1 = 'revertableGlobalsTestD1';
+tests.add("`revertableGlobals` with various globals.", () => {
+  const globalName1 = "revertableGlobalsTestD1";
   const originalValue1 = false;
   const newValue1 = true;
-  const globalName2 = 'revertableGlobalsTestD2';
+  const globalName2 = "revertableGlobalsTestD2";
   const originalValue2 = undefined;
   const newValue2 = true;
-  const globalName3 = 'revertableGlobalsTestD3';
+  const globalName3 = "revertableGlobalsTestD3";
   const newValue3 = 2;
 
   globalThis[globalName1] = originalValue1;

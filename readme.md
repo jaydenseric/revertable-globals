@@ -30,14 +30,14 @@ Sets globals that can be easily reverted to restore the original environment.
 _How to `import`._
 
 > ```js
-> import revertableGlobals from 'revertable-globals';
+> import revertableGlobals from "revertable-globals";
 > ```
 
 _How to set and revert `fetch` related globals for a test._
 
 > ```js
-> import fetch, { Request, Response } from 'node-fetch';
-> import revertableGlobals from 'revertable-globals';
+> import fetch, { Request, Response } from "node-fetch";
+> import revertableGlobals from "revertable-globals";
 >
 > const revertGlobals = revertableGlobals({
 >   fetch,
@@ -55,9 +55,9 @@ _How to set and revert `fetch` related globals for a test._
 _How to set and revert an environment variable at runtime for a test._
 
 > ```js
-> import revertableGlobals from 'revertable-globals';
+> import revertableGlobals from "revertable-globals";
 >
-> const revertEnv = revertableGlobals({ FORCE_COLOR: '1' }, process.env);
+> const revertEnv = revertableGlobals({ FORCE_COLOR: "1" }, process.env);
 >
 > try {
 >   // Test assertions here…
