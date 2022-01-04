@@ -7,9 +7,13 @@ const ABSENT = Symbol();
  * @param {object} globals Map of globals to set.
  * @param {object} [namespace=globalThis] Namespace for the globals, defaulting to [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
  * @returns {Function} Reverts the globals.
- * @example <caption>How to `import`.</caption>
+ * @example <caption>Ways to import.</caption>
  * ```js
  * import revertableGlobals from "revertable-globals";
+ * ```
+ *
+ * ```js
+ * import revertableGlobals from "revertable-globals/revertableGlobals.mjs";
  * ```
  * @example <caption>How to set and revert `fetch` related globals for a test.</caption>
  * ```js

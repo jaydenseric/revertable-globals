@@ -27,10 +27,14 @@ Sets globals that can be easily reverted to restore the original environment.
 
 #### Examples
 
-_How to `import`._
+_Ways to import._
 
 > ```js
 > import revertableGlobals from "revertable-globals";
+> ```
+>
+> ```js
+> import revertableGlobals from "revertable-globals/revertableGlobals.mjs";
 > ```
 
 _How to set and revert `fetch` related globals for a test._
