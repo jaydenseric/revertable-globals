@@ -14,10 +14,6 @@ npm install revertable-globals --save-dev
 
 ## API
 
-### Table of contents
-
-- [function revertableGlobals](#function-revertableglobals)
-
 ### function revertableGlobals
 
 Sets globals that can be easily reverted to restore the original environment.
