@@ -4,7 +4,7 @@
 
 Sets globals in a JavaScript environment that can be easily reverted to restore the original environment; useful for testing code that relies on the presence of certain globals.
 
-## Setup
+## Installation
 
 To install with [npm](https://npmjs.com/get-npm), run:
 

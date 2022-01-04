@@ -14,6 +14,7 @@
 - Simplified package scripts.
 - Added a package `docs-check` script that checks the readme API docs are up to date with the source JSDoc.
 - Configured Prettier option `singleQuote` to the default, `false`.
+- Documentation tweaks.
 
 ## 2.0.0
 
