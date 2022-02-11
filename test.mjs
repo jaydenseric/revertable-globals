@@ -2,6 +2,7 @@
 
 import { strictEqual } from "assert";
 import TestDirector from "test-director";
+
 import revertableGlobals from "./revertableGlobals.mjs";
 
 const tests = new TestDirector();

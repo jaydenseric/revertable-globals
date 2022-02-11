@@ -5,6 +5,7 @@
 ### Patch
 
 - Updated dev dependencies.
+- Simplified dev dependencies and config for ESLint.
 
 ## 3.0.0
 
