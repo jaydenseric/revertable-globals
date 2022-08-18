@@ -24,7 +24,6 @@
     "revertableGlobals.mjs"
   ],
   "sideEffects": false,
-  "main": "./revertableGlobals.mjs",
   "exports": {
     ".": "./revertableGlobals.mjs",
     "./package.json": "./package.json",
