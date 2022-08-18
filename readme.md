@@ -15,7 +15,7 @@ For [Deno](https://deno.land), an example import map:
 ```json
 {
   "imports": {
-    "revertable-globals": "https://unpkg.com/revertable-globals@3.0.0/revertableGlobals.mjs"
+    "revertable-globals": "https://unpkg.com/revertable-globals@4.0.0/revertableGlobals.mjs"
   }
 }
 ```
