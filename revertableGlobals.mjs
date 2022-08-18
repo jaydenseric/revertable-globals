@@ -4,8 +4,8 @@ const ABSENT = Symbol();
 
 /**
  * Sets globals that can be easily reverted to restore the original environment.
- * @param {Record<string, unknown>} globals Map of globals to set.
- * @param {Record<string, unknown>} [namespace] Namespace for the globals.
+ * @param {{ [key: string]: unknown }} globals Map of globals to set.
+ * @param {{ [key: string]: unknown }} [namespace] Namespace for the globals.
  *   Defaults to {@linkcode globalThis}.
  * @returns {() => void} Function that reverts the globals.
  * @example
@@ -44,7 +44,7 @@ const ABSENT = Symbol();
  * ```
  */
 export default function revertableGlobals(globals, namespace = globalThis) {
-  /** @type {Record<string, unknown>} */
+  /** @type {{ [key: string]: unknown }} */
   const originalGlobals = {};
 
   for (const [key, value] of Object.entries(globals)) {

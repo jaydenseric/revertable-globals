@@ -19,6 +19,7 @@
   - Run tests with Node.js v14, v16, v18.
   - Updated `actions/checkout` to v3.
   - Updated `actions/setup-node` to v3.
+- Replaced TypeScript `Record` types with index signatures.
 - Updated the JSDoc code examples.
 - Revamped the readme:
   - Removed the badges.

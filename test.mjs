@@ -14,7 +14,7 @@ tests.add(
     const originalValue = false;
     const newValue = true;
 
-    /** @type {Record<string, unknown>} */
+    /** @type {{ [key: string]: unknown }} */
     const namespace = {};
 
     namespace[globalName] = originalValue;
