@@ -12,6 +12,8 @@
 - Simplified dev dependencies and config for ESLint.
 - Updated GitHub Actions CI config:
   - Run tests with Node.js v14, v16, v18.
+  - Updated `actions/checkout` to v3.
+  - Updated `actions/setup-node` to v3.
 
 ## 3.0.0
 
