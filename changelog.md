@@ -19,6 +19,12 @@
   - Run tests with Node.js v14, v16, v18.
   - Updated `actions/checkout` to v3.
   - Updated `actions/setup-node` to v3.
+- Updated the JSDoc code examples.
+- Revamped the readme:
+  - Removed the badges.
+  - Removed the detailed API docs. The JSDoc comments and TypeScript types in the exported modules are now the primary documentation.
+  - Added a “Requirements” section.
+  - Added information about Deno, import maps, TypeScript config and [optimal JavaScript module design](https://jaydenseric.com/blog/optimal-javascript-module-design).
 
 ## 3.0.0
 

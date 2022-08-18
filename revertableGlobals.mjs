@@ -9,17 +9,7 @@ const ABSENT = Symbol();
  *   Defaults to {@linkcode globalThis}.
  * @returns {() => void} Function that reverts the globals.
  * @example
- * Ways to import.
- *
- * ```js
- * import revertableGlobals from "revertable-globals";
- * ```
- *
- * ```js
- * import revertableGlobals from "revertable-globals/revertableGlobals.mjs";
- * ```
- * @example
- * How to set and revert `fetch` related globals for a test.
+ * For Node.js, how to set and revert `fetch` related globals for a test:
  *
  * ```js
  * import fetch, { Request, Response } from "node-fetch";
@@ -38,7 +28,8 @@ const ABSENT = Symbol();
  * }
  * ```
  * @example
- * How to set and revert an environment variable at runtime for a test.
+ * For Node.js, how to set and revert an environment variable at runtime for a
+ * test:
  *
  * ```js
  * import revertableGlobals from "revertable-globals";
